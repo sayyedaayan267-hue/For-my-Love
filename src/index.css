@@ -1,0 +1,136 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-serif: 'Cormorant Garamond', Georgia, serif;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-script: 'Caveat', cursive;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #0f0a15;
+    color: #fdf2f4;
+    overflow-x: hidden;
+  }
+}
+
+.font-serif-cormorant {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+}
+
+.font-serif-display {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-sans-body {
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+}
+
+.font-handwriting {
+  font-family: 'Caveat', cursive;
+}
+
+/* Custom Soft Glow & Gradients */
+.bg-night-sky {
+  background: radial-gradient(circle at 50% 20%, #2a1636 0%, #170d24 50%, #0d0714 100%);
+}
+
+.glass-card {
+  background: rgba(255, 245, 248, 0.04);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(244, 114, 182, 0.15);
+}
+
+.glass-card-hover:hover {
+  background: rgba(255, 245, 248, 0.07);
+  border-color: rgba(244, 114, 182, 0.28);
+  box-shadow: 0 10px 30px -10px rgba(244, 114, 182, 0.18);
+}
+
+/* Letter Texture */
+.letter-paper {
+  background: #fdfbf7;
+  color: #2e2629;
+  background-image: radial-gradient(#eadbc8 0.6px, transparent 0.6px), radial-gradient(#eadbc8 0.6px, #fdfbf7 0.6px);
+  background-size: 24px 24px;
+  background-position: 0 0, 12px 12px;
+}
+
+/* Keyframes */
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotate(1deg);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+    filter: drop-shadow(0 0 12px rgba(244, 114, 182, 0.4));
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 25px rgba(244, 114, 182, 0.7));
+  }
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.2;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.15);
+  }
+}
+
+@keyframes shootingStar {
+  0% {
+    transform: translateX(0) translateY(0) rotate(-35deg) scale(0);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+    transform: translateX(-40px) translateY(40px) rotate(-35deg) scale(1);
+  }
+  100% {
+    transform: translateX(-400px) translateY(400px) rotate(-35deg) scale(0.3);
+    opacity: 0;
+  }
+}
+
+.animate-float-slow {
+  animation: floatGentle 6s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3.5s ease-in-out infinite;
+}
+
+.animate-twinkle {
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+/* Custom scrollbar for soothing look */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0f0a15;
+}
+::-webkit-scrollbar-thumb {
+  background: #3b2247;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #5b346d;
+}
